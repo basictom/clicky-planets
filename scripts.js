@@ -1,5 +1,6 @@
 var output = document.getElementById("planet-holder");
 var button = document.getElementById("show-planets");
+// var planetBoxes = document.getElementsByClassName('planet-box');
 var planets = [
 
   {
@@ -35,15 +36,30 @@ var planets = [
     url:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/260px-Neptune_Full.jpg"
   }];
 
-button.addEventListener("click", addText);
 
 function addText(){
   output.innerHTML = "";
   for (var i=0; i<planets.length; i++){
     var newPlanet = "";
     newPlanet += `<div class="planet-box" id="planet-box-${i}">`
-    newPlanet += `<div class="planet-holder"> ${planets[i].name} ${planets[i]} </div>`;
+    newPlanet += `<div class="planet-holder hidden"> ${planets[i].name} </div>`;
+    newPlanet += `<img class="planet-image" src="${planets[i].url}">`
     newPlanet += `</div>`
     output.innerHTML += newPlanet;
   }
 }
+
+function showMeTheMoney(event){
+  if(event.target.className === 'planet-image'){
+    console.log("event worked", event);
+    console.log("unique ID", event.target.parentNode.id);
+    console.log("previous sibling", event.target.previousSibling);
+    event.target.previousSibling.classList.toggle('hidden');
+  }
+}
+
+// button.addEventListener("click", addText);
+button.addEventListener("mouseenter", addText);
+document.body.addEventListener("click", showMeTheMoney);
+
+// button.addEventListener("mouseleave"), addText);
