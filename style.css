@@ -31,5 +31,23 @@ body {
 }
 
 .planet-holder {
-  padding: 30px;
+  padding: 5px 30px;
+  font-size: 16px;
+  /*text-align:center;*/
+}
+#planet-holder {
+  text-align:center;
+}
+.planet-box {
+  display:inline-block;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+display: inline-block;
+border: 1px solid #999;
+margin: 20px;
+height: 400px;
+width: 25%;
+text-align: center;
+background-color: #fbfbfb;
 }
